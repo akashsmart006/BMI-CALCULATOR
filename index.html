@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BMI CALCULATOR</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@100&family=Sacramento&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="main">
+    <br>
+    <h1 id="head">BMI CALCULATOR</h1>
+    <br>
+    <br>
+    <h2>ENTER YOUR HEIGHT IN CM : </h2>
+    <input type="text" id="a" value="">
+    <br>
+    <br>
+    <h2>ENTER YOUR WEIGHT IN KG : </h2>
+    <input type="text" id="b" value="">
+    <br>
+    <br>
+    <h2 id="demo1"></h2>
+    <h2 id="demo2"></h2>
+    <br>
+    <br>
+    <button type="button" onclick="fun1()" id="c">CALCULATE BMI</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script type="text/javascript">
+      function fun1()
+      {
+        var x=document.getElementById("a").value;
+        var y=document.getElementById("b").value;
+        var x1=parseInt(x);
+        var y1=parseInt(y);
+        var x2=x1**2;
+        var d=(y1/x2)*(10**4);
+        var z=d.toFixed(2);
+        document.getElementById("demo1").innerHTML = "YOUR BMI IS "+z;
+        if(z<18.5)
+        {
+          document.getElementById("demo2").innerHTML = "YOU ARE UNDERWEIGHT";
+        }
+        if(z>=18.5 && z<25)
+        {
+          document.getElementById("demo2").innerHTML = "YOU ARE NORMAL";
+        }
+        if(z>=25 && z<30)
+        {
+          document.getElementById("demo2").innerHTML = "YOU ARE OVERWEIGHT";
+        }
+        if(z>30)
+        {
+          document.getElementById("demo2").innerHTML = "YOU ARE OBESE";
+        }
+      }
+    </script>
+    </div>
+  </body>
+</html>
